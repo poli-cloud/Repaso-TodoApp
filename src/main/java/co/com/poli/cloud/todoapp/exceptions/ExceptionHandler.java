@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ExceptionHandler extends ResponseEntityExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value
-            = {IllegalArgumentException.class, IllegalStateException.class})
+            = {TodoExceptions.class})
     protected ResponseEntity<Object> handleConflict(
             TodoExceptions ex, WebRequest request) {
         return handleExceptionInternal(ex, ex.getMessage(),
